@@ -1,22 +1,30 @@
 #outer{
-    height: 200px;
-    width: 70px;
-    border: 10px solid black;
-    border-style: double;
+    height: 500px;
+    width: 500px;
+    background-color: aqua;
+    display: flex;
+    
+    /* flex-wrap: wrap-reverse; */
+    /* align-items: baseline; */
+    /* align-content:center  ; */
+    
 }
-.b{
+.inner{
     height: 50px;
-    width: 50px;
-    border: 2px solid black;
-    margin: 10px;
-    border-radius: 50%;
+    width: 25px;
+    transition: 2s;
+    /* margin: 5px; */
+    box-shadow:2px 2px 10px black ;
+    
 }
-#c{
-    background-color: red;
+.inner:hover{
+    /* border-radius: 50%; */
+    
 }
-#d{
-    background-color: yellow;
-}
-#e{
-    background-color: rgb(65, 211, 65);
-}
+#purple{
+   height: 80px;
+   width: 50px;
+   align-self: center;
+   flex-basis: 100px;
+   /* flex:; */
+} 
