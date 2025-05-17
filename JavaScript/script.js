@@ -16,7 +16,7 @@
 // console.warn("soon it will be end!");
 // console.info("describe");
 
-let fname = prompt("enter your first name:");
-let lname = prompt("enter your last name:");
-let msg = fname + " " + lname + "!";
-alert(msg);
+// let fname = prompt("enter your first name:");
+// let lname = prompt("enter your last name:");
+// let msg = fname + " " + lname + "!";
+// alert(msg);
