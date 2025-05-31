@@ -89,4 +89,5 @@ app.delete("/listings/:id", async (req,res)=>{
     let deletedListing = await Listing.findByIdAndDelete(id);
     console.log(deletedListing);
     res.redirect("/listings");
+    //
 });
