@@ -8,6 +8,7 @@ const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const {listingSchema} = require("./schema.js");
+const Review = require("./models/review.js");
 
 
 app.get("/",(req,res)=>{
@@ -120,6 +121,23 @@ app.use((err,req,res,next)=>{
     let{statusCode=500,message="500:Something went wrong!"} = err;
     //res.status(statusCode).send(message);
     res.status(statusCode).render("error.ejs",{err});
+});
+
+//reviews
+//post route
+app.post("/listings/:id/reviews", async(req,res)=>{
+    let listing = await Listing.findById(req.params.id);
+    let newReview = new Review(req.body.review);
+
+    listing.reviews.push(newReview);
+
+    await newReview.save();
+    await listing.save();
+
+    // console.log("new review saved!");
+    // res.send("new review saved!");
+
+    res.redirect(`/listings/$(listing._id)`);
 });
 
 app.listen(8080,()=>{
