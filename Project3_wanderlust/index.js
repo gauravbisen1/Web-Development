@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
+const flash = require("connect-flash");
 
 const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
@@ -47,6 +48,16 @@ const sessionOptions = {
 };
 //use session
 app.use(session(sessionOptions));
+
+//use flash
+app.use(flash());
+
+//middleware for flash (use before routes)
+app.use((req,res,next) => {
+    res.locals.success = req.flash("success");
+    res.locals.error = req.flash("error");
+    next();//if not use we stuck here
+})
 
 //listing route
 app.use("/listings", listings);
