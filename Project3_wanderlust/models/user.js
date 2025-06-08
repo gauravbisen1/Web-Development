@@ -10,6 +10,6 @@ const userSchema = new Schema({
 });
 
 //automaticaly implement username,password,hashing and salting!
-User.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("User" , userSchema);
