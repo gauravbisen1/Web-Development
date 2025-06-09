@@ -20,6 +20,10 @@ const listingSchema = new schema({
         type: mongoose.Schema.Types.ObjectId,//review object id in individual listing , inside array
         ref:"Review",//review model is reference
     },],
+    owner: {
+        type: schema.Types.ObjectId,
+        ref: "User"
+    }
 });
 
 //post mongoose middleware

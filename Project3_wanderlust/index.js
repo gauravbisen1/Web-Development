@@ -68,7 +68,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req,res,next) => {
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");//locals define
-    res.locals.currUser = req.user;//user info
+    res.locals.currUser = req.user;//user info sending to another ejs page as currUser
     next();//if not use we stuck here
 })
 
