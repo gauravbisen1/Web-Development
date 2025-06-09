@@ -3,28 +3,9 @@ const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
 const Listing = require("../models/listing.js");
 const {isLoggedIn , isOwner , validateListing} = require("../middleware.js");
-
 const listingController = require("../controllers/listing.js");
-
-// this will also be use-----------------------------------------------------------
-
-//index and create route has same route to refactor it we use router.router
-
-// router.route("/")
-// .get(wrapAsync( listingController.index )) //index route
-// .post(isLoggedIn ,validateListing, wrapAsync //create route(listingController.createListing));
-
-// //new route
-// router.get("/new", isLoggedIn , listingController.renderNewForm);
-
-//show, update and delete also have same route 
-
-// router.route("/:id")
-// .get( wrapAsync( listingController.showListing ))//show route
-// .put( isLoggedIn, isOwner ,validateListing,wrapAsync( listingController.updateListing ))//update route
-// router.delete("/:id",isLoggedIn ,isOwner ,wrapAsync( listingController.destroyListing ));//delete route
-
-// ----------------------------or-------------------------------
+const multer= require("multer");
+const upload = multer({ dest: "uploads/" });
 
 
 //index route
@@ -49,3 +30,24 @@ router.put("/:id", isLoggedIn, isOwner ,validateListing,wrapAsync( listingContro
 router.delete("/:id",isLoggedIn ,isOwner ,wrapAsync( listingController.destroyListing ));
 
 module.exports = router;
+
+// ----------------------------or-------------------------------
+
+
+// this will also be use-----------------------------------------------------------
+
+//index and create route has same route to refactor it we use router.router
+
+// router.route("/")
+// .get(wrapAsync( listingController.index )) //index route
+// .post(isLoggedIn ,validateListing, wrapAsync //create route(listingController.createListing));
+
+// //new route
+// router.get("/new", isLoggedIn , listingController.renderNewForm);
+
+//show, update and delete also have same route 
+
+// router.route("/:id")
+// .get( wrapAsync( listingController.showListing ))//show route
+// .put( isLoggedIn, isOwner ,validateListing,wrapAsync( listingController.updateListing ))//update route
+// router.delete("/:id",isLoggedIn ,isOwner ,wrapAsync( listingController.destroyListing ));//delete route
