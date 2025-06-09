@@ -31,7 +31,18 @@ router.get("/login", (req,res) =>{
 router.post("/login", passport.authenticate("local",{ failureRedirect: "/login", failureFlash: true}), async (req,res)=>{
     req.flash("success" , "Welcome back to Wanderlust!");
     res.redirect("/listings");
-})
+});
+
+//logout->
+router.get("/logout", (req,res,next)=>{
+    req.logout((err)=>{//if error comes it will store in err and if not it will undefined
+        if(err){
+            return next(err);
+        }
+        req.flash("success", "You are Logged Out!");
+        res.redirect("/listings");
+    });
+});
 
 module.exports = router;
 
