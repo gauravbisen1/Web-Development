@@ -21,10 +21,9 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const { date } = require("joi");
 
-
-app.get("/",(req,res)=>{
-    res.send("Hii, I am root");
-});
+// app.get("/",(req,res)=>{
+//     res.send("Hii, I am root");
+// });
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
