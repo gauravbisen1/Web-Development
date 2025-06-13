@@ -1,13 +1,13 @@
 import './App.css'
-import Title from "./Title.jsx";
+import ProductTab from "./ProductTab.jsx";
+import MsgBox from "./Activity.jsx";
 
 function App() {
   return (
-    <div>
-      <Title/>
-      <Title/>
-      <Title/>
-    </div>
+    <>
+      <MsgBox userName="Gaurav" textColor="blue"/>
+      <ProductTab/>
+    </>
   );
 }
 

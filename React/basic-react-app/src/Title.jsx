@@ -1,5 +1,6 @@
 function Title() {
-    return <h1>Hello World!</h1>
+    let msg = "Gaurav";
+    return <h1>Hello World! {msg}</h1>
 }
 
 export default Title;
