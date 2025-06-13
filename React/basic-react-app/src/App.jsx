@@ -1,11 +1,10 @@
 import './App.css'
 import ProductTab from "./ProductTab.jsx";
-import MsgBox from "./Activity.jsx";
 
 function App() {
   return (
     <>
-      <MsgBox userName="Gaurav" textColor="blue"/>
+    <h2>Starting with react! Many more to goo..</h2>
       <ProductTab/>
     </>
   );
