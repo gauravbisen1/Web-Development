@@ -2,12 +2,18 @@ import { useState } from "react";
 
 export default function LudoBoard() {
     let [moves , setMoves] = useState({blue:0 , red:0 , yellow:0 , green:0});
+    let [arr, SetArr] = useState(["no moves"]);
 
     let updateBlue = ()=>{
         //when we update value of key , object adress cant change ..... we have to copy it in new adress(object)
         setMoves((prevMoves)=>{
             return {...prevMoves, blue: prevMoves.blue + 1}
         });
+
+        SetArr((prevMoves)=>{
+            return [...prevMoves, "blue moves"]
+        });
+        console.log(arr);
     };
     let updateYellow = ()=>{
         setMoves((prevMoves)=>{
@@ -28,6 +34,7 @@ export default function LudoBoard() {
     return (
         <div>
             <h3>Game Begins!</h3>
+            <p>{arr}</p>
             <div className="board">
                 <p>Blue moves = {moves.blue} </p>
                 <button style={{backgroundColor:"blue"}} onClick={updateBlue}>+1</button>
