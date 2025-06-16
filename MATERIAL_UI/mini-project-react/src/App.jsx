@@ -1,15 +1,10 @@
-import './App.css'
-import Button from '@mui/material/Button';
+// import './App.css'
+import SearchBox from './SearchBov';
 
 function App() {
-  let handleClick = ()=>{
-    console.log("button was clicked!");
-  };
   return (
     <>
-      <h1>Material UI Demo</h1>
-      <Button variant="text" onClick={handleClick}>Click Me!</Button>
-      
+      <SearchBox/>
     </>
   )
 }
