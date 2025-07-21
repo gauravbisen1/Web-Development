@@ -26,9 +26,8 @@ app.listen(port,()=>{
 // app.get("/help",(req,res)=>{
 //     res.send("you contacted help path");
 // });
-// app.get('*',(req,res)=>{
-//     res.send("path not exist");
-// });//giving error
+
+
 
 //path parameter
 app.get("/",(req,res)=>{
@@ -46,6 +45,10 @@ app.get("/search",(req,res)=>{
         res.send("no search query!")
     }
     res.send(`this are thr result for: ${q}`)
+});
+
+app.get('/*path',(req,res)=>{
+    res.send("path not exist");
 });
 
 
