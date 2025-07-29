@@ -1,12 +1,12 @@
+import { useState } from "react"
+
 const App = () => {
-  const user = "Gaurav"
-  const click = ()=>{
-    console.log("button clicked...")
-  }
+  const [num, setNum] = useState(0)
   return (
     <div>
-      <h1>Username - {user}</h1>
-      <button onClick={click}>CLICK ME!</button>
+      <h1 className="text-8xl bg-red-700">Counter - {num}</h1>
+      <button onClick={()=>{setNum(num+1)}}>increase count</button>
+      <button onClick={()=>{setNum(num-1)}}>decrease count</button>
     </div>
   )
 }
