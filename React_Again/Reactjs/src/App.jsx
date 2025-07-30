@@ -1,14 +1,58 @@
-import { useState } from "react"
+import React from 'react'
 
 const App = () => {
-  const [num, setNum] = useState(0)
   return (
-    <div>
-      <h1 className="text-8xl bg-red-700">Counter - {num}</h1>
-      <button onClick={()=>{setNum(num+1)}}>increase count</button>
-      <button onClick={()=>{setNum(num-1)}}>decrease count</button>
-    </div>
+    <div>App</div>
   )
 }
 
 export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react'
+
+// const App = () => {
+//   const [username, setusername] = useState("")
+
+//   const submitHandler = (e) => {
+//     e.preventDefault()
+//     console.log(username)
+//     setusername("")
+//   }
+//   return (
+//     <div>
+//       <form onSubmit={(e)=>{
+//         submitHandler(e)
+//       }}>
+//           <input value={username} onChange={
+//             (e)=>{
+//               setusername(e.target.value)
+//             }
+//           } placeholder='Enter your name' type="text" className=' rounded text-xl m-5 border'/>
+//           <button className='rounded '>submit</button>
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default App
