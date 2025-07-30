@@ -1,8 +1,18 @@
 import React from 'react'
+import  Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Card from './components/Card'
 
 const App = () => {
+  const user = "Gaurav"
   return (
-    <div>App</div>
+    <>
+      <Navbar/>
+      <div className='p-10'>
+        <Card user="Gaurav" age="22" city="indore"/>
+      </div>
+      <Footer />
+    </>
   )
 }
 
