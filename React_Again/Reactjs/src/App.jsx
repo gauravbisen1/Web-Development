@@ -4,12 +4,57 @@ import Footer from './components/Footer'
 import Card from './components/Card'
 
 const App = () => {
-  const user = "Gaurav"
+
+  const user = [
+    {
+      "name": "Aarav Singh",
+      "age": 28,
+      "city": "Bengaluru",
+      "profession": "Software Engineer",
+      "profile_photo": "https://randomuser.me/api/portraits/men/75.jpg"
+    },
+    {
+      "name": "Meera Patel",
+      "age": 32,
+      "city": "Ahmedabad",
+      "profession": "UI/UX Designer",
+      "profile_photo": "https://randomuser.me/api/portraits/women/65.jpg"
+    },
+    {
+      "name": "Rahul Sharma",
+      "age": 24,
+      "city": "Delhi",
+      "profession": "Digital Marketer",
+      "profile_photo": "https://randomuser.me/api/portraits/men/34.jpg"
+    },
+    {
+      "name": "Ananya Rao",
+      "age": 30,
+      "city": "Hyderabad",
+      "profession": "Data Scientist",
+      "profile_photo": "https://randomuser.me/api/portraits/women/21.jpg"
+    },
+    {
+      "name": "Vikram Joshi",
+      "age": 27,
+      "city": "Pune",
+      "profession": "Product Manager",
+      "profile_photo": "https://randomuser.me/api/portraits/men/53.jpg"
+    }
+  ]
+
+  user.map(function(elem){
+    return 
+  });
+  
+  
   return (
     <>
       <Navbar/>
       <div className='p-10'>
-        <Card user="Gaurav" age="22" city="indore"/>
+        {user.map(function(elem,idx){
+          return <Card key={idx} username={elem.name} age={elem.age} city={elem.city} profession={elem.profession} photo={elem.profile_photo}   />
+        })}
       </div>
       <Footer />
     </>
