@@ -1,26 +1,77 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import About from './pages/About'
-import Product from './pages/Product'
-import Home from './pages/Home'
-import Contact from './pages/Contact'
-import Navbar from './components/Navbar'
+import React, { useContext } from 'react'
+import One from './components/one'
+import Two from './components/two'
+import { DataContext } from './context/UserContext'
 
 const App = () => {
+  const data = useContext(DataContext)
   return (
-    <div>
-      <Navbar/>
-       <Routes>
-          <Route path='/about' element={<About/>}/>
-          <Route path='/contact' element={<Contact/>}/>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/product' element={<Product/>}/>
-       </Routes>
+    <div>   
+      <h1>This is app {data.username}</h1>     
+      <h1>This is app {data.city}</h1>  
+      <h1>This is app {data.age}</h1>
+      <One/>
+      <Two/>
     </div>
   )
 }
 
 export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//routing
+// import React from 'react'
+// import { Route, Routes } from 'react-router-dom'
+// import About from './pages/About'
+// import Product from './pages/Product'
+// import Home from './pages/Home'
+// import Contact from './pages/Contact'
+// import Navbar from './components/Navbar'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Navbar/>
+//        <Routes>
+//           <Route path='/about' element={<About/>}/>
+//           <Route path='/contact' element={<Contact/>}/>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='/product' element={<Product/>}/>
+//        </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
 
 
 
