@@ -102,7 +102,7 @@ app.all("/*path",(req,res,next)=>{
     next(new ExpressError(404,"Page not found!"));
 });
 
-//middleware
+//middleware,
 app.use((err,req,res,next)=>{
     let{statusCode=500,message="500:Something went wrong!"} = err;
     //res.status(statusCode).send(message);
